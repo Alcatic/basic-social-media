@@ -16,6 +16,11 @@ class LoginVC:UIViewController{
         super.viewDidLoad()
         
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 

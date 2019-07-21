@@ -20,6 +20,10 @@ class SignUpVC: UIViewController{
         initalPhoto.layer.borderColor = UIColor.black.cgColor
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     @IBOutlet weak var initalPhoto: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -78,6 +82,7 @@ class SignUpVC: UIViewController{
                 })
                 
                 print("uploaded image!!!")
+            
             })
             
             //Add user info to Database

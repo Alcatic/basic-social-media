@@ -13,16 +13,33 @@ class UserProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        fetchUser()
+        userCollectionView.register(UserHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerID")
+      
     }
     
     
-
+    @IBOutlet weak var userCollectionView: UICollectionView!
+    
+    fileprivate func fetchUser(){
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let dictionary = snapshot.value as? [String: Any] else{return}
+            let username = dictionary["username"] as? String
+            self.navigationItem.title = username
+            
+        }) { (err) in
+            print("failed to fetch user \(err)")
+            return
+        }
+    }
 }
 
 
-extension UserProfileVC: UICollectionViewDelegate, UICollectionViewDataSource{
+extension UserProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,6 +51,16 @@ extension UserProfileVC: UICollectionViewDelegate, UICollectionViewDataSource{
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 200)
+    }
     
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerID", for: indexPath) as! UserHeader
+        header.backgroundColor = .red
+        return header
+    }
     
 }

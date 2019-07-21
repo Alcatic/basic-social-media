@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class UserProfileVC: UIViewController {
 
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class UserProfileVC: UIViewController {
       
     }
     
+    var user: User?
     
     @IBOutlet weak var userCollectionView: UICollectionView!
     
@@ -28,8 +30,10 @@ class UserProfileVC: UIViewController {
         Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard let dictionary = snapshot.value as? [String: Any] else{return}
-            let username = dictionary["username"] as? String
-            self.navigationItem.title = username
+            
+            self.user = User(dictionary: dictionary)
+            self.navigationItem.title = self.user?.username
+            self.userCollectionView.reloadData()
             
         }) { (err) in
             print("failed to fetch user \(err)")
@@ -59,7 +63,9 @@ extension UserProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerID", for: indexPath) as! UserHeader
-        header.backgroundColor = .red
+        header.user = self.user
+        
+
         return header
     }
     

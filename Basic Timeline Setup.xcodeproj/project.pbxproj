@@ -16,6 +16,7 @@
 		5A09B1DC22E4BEF90019554F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09B1DB22E4BEF90019554F /* LoginVC.swift */; };
 		5A09B1DE22E4C0DB0019554F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A09B1DD22E4C0DB0019554F /* GoogleService-Info.plist */; };
 		5A57723F22E501540036B322 /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A57723E22E501540036B322 /* UserHeader.swift */; };
+		5AAD787022E52437006AD050 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD786F22E52437006AD050 /* User.swift */; };
 		5ADDCA1F22E4F03900207D7A /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCA1E22E4F03900207D7A /* UserProfileVC.swift */; };
 		5ADDCA2122E4F0CB00207D7A /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCA2022E4F0CB00207D7A /* UserProfileCell.swift */; };
 		C2189734E8871336AAFE5522 /* Pods_Basic_Timeline_Setup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EEDBEA100E961809E6928A /* Pods_Basic_Timeline_Setup.framework */; };
@@ -34,6 +35,7 @@
 		5A09B1DB22E4BEF90019554F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5A09B1DD22E4C0DB0019554F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A57723E22E501540036B322 /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHeader.swift; path = "../../../../../../System/Volumes/Data/Users/di_nerd/Documents/Practice/Basic Timeline Setup/Basic Timeline Setup/UserHeader.swift"; sourceTree = "<group>"; };
+		5AAD786F22E52437006AD050 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../../../System/Volumes/Data/Users/di_nerd/Documents/Practice/Basic Timeline Setup/Basic Timeline Setup/User.swift"; sourceTree = "<group>"; };
 		5ADDCA1E22E4F03900207D7A /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfileVC.swift; path = "../../../../../../System/Volumes/Data/Users/di_nerd/Documents/Practice/Basic Timeline Setup/Basic Timeline Setup/UserProfileVC.swift"; sourceTree = "<group>"; };
 		5ADDCA2022E4F0CB00207D7A /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserProfileCell.swift; path = "../../../../../../System/Volumes/Data/Users/di_nerd/Documents/Practice/Basic Timeline Setup/Basic Timeline Setup/UserProfileCell.swift"; sourceTree = "<group>"; };
 		65D81135EEC44DDA32B23D6E /* Pods-Basic Timeline Setup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Basic Timeline Setup.debug.xcconfig"; path = "Target Support Files/Pods-Basic Timeline Setup/Pods-Basic Timeline Setup.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,11 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				5A09B1C722E4BEA10019554F /* AppDelegate.swift */,
+				5AAD786F22E52437006AD050 /* User.swift */,
 				5A09B1CB22E4BEA10019554F /* SignUpVC.swift */,
 				5A09B1DB22E4BEF90019554F /* LoginVC.swift */,
+				5A57723E22E501540036B322 /* UserHeader.swift */,
 				5ADDCA1E22E4F03900207D7A /* UserProfileVC.swift */,
 				5ADDCA2022E4F0CB00207D7A /* UserProfileCell.swift */,
-				5A57723E22E501540036B322 /* UserHeader.swift */,
 				5A09B1C922E4BEA10019554F /* FeedVC.swift */,
 				5A09B1CD22E4BEA10019554F /* Main.storyboard */,
 				5A09B1D022E4BEB50019554F /* Assets.xcassets */,
@@ -226,6 +229,7 @@
 				5A09B1C822E4BEA10019554F /* AppDelegate.swift in Sources */,
 				5A09B1DC22E4BEF90019554F /* LoginVC.swift in Sources */,
 				5ADDCA1F22E4F03900207D7A /* UserProfileVC.swift in Sources */,
+				5AAD787022E52437006AD050 /* User.swift in Sources */,
 				5ADDCA2122E4F0CB00207D7A /* UserProfileCell.swift in Sources */,
 				5A09B1CA22E4BEA10019554F /* FeedVC.swift in Sources */,
 				5A57723F22E501540036B322 /* UserHeader.swift in Sources */,

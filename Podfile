@@ -11,5 +11,6 @@ target 'Basic Timeline Setup' do
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod 'Firebase/Analytics'
+    pod 'SDWebImage'
 
 end
